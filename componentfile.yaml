@@ -1,0 +1,11 @@
+components:
+- name: phoban.io/podinfo
+  version: 6.2.3
+  provider:
+    name: phoban.io
+  resources:
+  - name: deployment
+    type: Directory
+    input:
+      type: dir
+      path: manifests

@@ -2,6 +2,19 @@ apiVersion: config.ocm.software/v1alpha1
 kind: ConfigData
 metadata:
   name: ocm-config
+configuration:
+  defaults:
+    serviceAccountName: default
+  rules:
+  - value: (( serviceAccountName ))
+    file: deployment.yaml
+    path: spec.template.spec.serviceAccountName
+  schema:
+    type: object
+    additionalProperties: false
+    properties:
+      serviceAccountname:
+        type: string
 localization:
 - name: image
   file: deployment.yaml

@@ -13,7 +13,7 @@ configuration:
     type: object
     additionalProperties: false
     properties:
-      serviceAccountname:
+      serviceAccountName:
         type: string
 localization:
 - name: image

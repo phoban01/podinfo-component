@@ -1,6 +1,6 @@
 components:
 - name: phoban.io/podinfo
-  version: 6.2.3
+  version: 6.3.5
   provider:
     name: phoban.io
   resources:
@@ -8,4 +8,17 @@ components:
     type: Directory
     input:
       type: dir
-      path: manifests
+      path: "manifests"
+      compress: true
+  - name: config
+    type: PlainText
+    input:
+      type: file
+      path: "config.yaml"
+      compress: true
+  - name: image
+    type: ociImage
+    version: "v6.2.0"
+    access:
+      type: ociArtifact
+      imageReference: ghcr.io/stefanprodan/podinfo:6.3.5
